@@ -30,8 +30,12 @@ client.on("message", (message) => {
   if (command === "ping") {
     client.commands.get("ping").execute(message, args);
   }
-  if (command === "muteall") {
-    client.commands.get("muteall").execute(message, args);
+  if (command === "mute") {
+    client.commands.get("mute").execute(message, args);
+  }
+
+  if (command === "unmute") {
+    client.commands.get("unmute").execute(message, args);
   }
 });
 
