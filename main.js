@@ -18,7 +18,7 @@ for (const file of commandFiles) {
 }
 
 client.once("ready", () => {
-  console.log("God Bot Ready to kick some ass!");
+  console.log("Mute Bot Ready to kick some ass!");
 });
 
 client.on("message", (message) => {
