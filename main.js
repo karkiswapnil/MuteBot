@@ -18,7 +18,7 @@ for (const file of commandFiles) {
 }
 
 client.once("ready", () => {
-  console.log("Among Us Companion is Online");
+  console.log("God Bot Ready to kick some ass!");
 });
 
 client.on("message", (message) => {
@@ -29,6 +29,9 @@ client.on("message", (message) => {
 
   if (command === "ping") {
     client.commands.get("ping").execute(message, args);
+  }
+  if (command === "muteall") {
+    client.commands.get("muteall").execute(message, args);
   }
 });
 
