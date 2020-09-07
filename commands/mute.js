@@ -16,18 +16,18 @@ module.exports = {
         message.channel
           .send("Silencio!!!")
           .then((message) => message.delete({ timeout: 15000 }))
-          .catch(console.err);
+          .catch(console.error);
       } else {
         message
           .reply("You need to join a voice channel first!")
           .then((message) => message.delete({ timeout: 15000 }))
-          .catch(console.err);
+          .catch(console.error);
       }
     } else {
       message.channel
         .send("You have no power over me!")
         .then((message) => message.delete({ timeout: 15000 }))
-        .catch(console.err);
+        .catch(console.error);
     }
   },
 };
