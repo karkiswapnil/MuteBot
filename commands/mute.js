@@ -13,12 +13,27 @@ module.exports = {
           // if (member != message.member)
           member.voice.setMute(true);
         }
-        message.channel.send("Silencio!!!");
+        message.channel
+          .send("Silencio!!!")
+          .then((message) => message.delete(30000))
+          .catch((err) => {
+            throw err;
+          });
       } else {
-        message.reply("You need to join a voice channel first!");
+        message
+          .reply("You need to join a voice channel first!")
+          .then((message) => message.delete(30000))
+          .catch((err) => {
+            throw err;
+          });
       }
     } else {
-      message.channel.send("You have no power over me!");
+      message.channel
+        .send("You have no power over me!")
+        .then((message) => message.delete(30000))
+        .catch((err) => {
+          throw err;
+        });
     }
   },
 };
