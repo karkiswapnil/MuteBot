@@ -27,6 +27,15 @@ client.on("message", async (message) => {
   const args = message.content.slice(prefix.length).split(/ +/);
   const command = args.shift().toLowerCase();
 
+  message
+    .delete({ timeout: 15000 })
+    .then((msg) =>
+      console.log(
+        `Deleted message from ${msg.author.username} after 15 seconds`
+      )
+    )
+    .catch(console.error);
+
   if (command === "ping") {
     client.commands.get("ping").execute(message, args);
   }
