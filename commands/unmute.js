@@ -16,25 +16,19 @@ module.exports = {
         }
         message.channel
           .send("Sonorus!!!")
-          .then((message) => message.delete(30000))
-          .catch((err) => {
-            throw err;
-          });
+          .then((message) => message.delete({ timeout: 15000 }))
+          .catch(console.error);
       } else {
         message
           .reply("You need to join a voice channel first!")
-          .then((message) => message.delete(30000))
-          .catch((err) => {
-            throw err;
-          });
+          .then((message) => message.delete({ timeout: 15000 }))
+          .catch(console.error);
       }
     } else {
       message.channel
         .send("You have no power over me!")
-        .then((message) => message.delete(30000))
-        .catch((err) => {
-          throw err;
-        });
+        .then((message) => message.delete({ timeout: 15000 }))
+        .catch(console.error);
     }
   },
 };
